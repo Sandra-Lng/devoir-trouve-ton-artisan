@@ -24,3 +24,12 @@ export async function recupererArtisans() {
         icone: iconesSpecialites[artisan.specialite.nom],
     }))
 }
+export async function recupererCategories() {
+    const reponse = await fetch(`${adresseApi}/categories`)
+
+    if (!reponse.ok) {
+        throw new Error('Impossible de récupérer les catégories')
+    }
+
+    return reponse.json()
+}

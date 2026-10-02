@@ -1,13 +1,47 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import logo from '../assets/Logo.png'
 import batiment from '../assets/icons/batiment.svg'
 import services from '../assets/icons/services.svg'
 import fabrication from '../assets/icons/fabrication.svg'
 import alimentation from '../assets/icons/alimentation.svg'
+import { recupererCategories } from '../services/api'
 import { Link } from 'react-router'
+
+const iconesCategories = {
+    batiment: batiment,
+    services: services,
+    fabrication: fabrication,
+    alimentation: alimentation,
+}
 
 function Header() {
     const [menuOuvert, setMenuOuvert] = useState(false)
+    const [categories, setCategories] = useState([])
+    const [erreurCategories, setErreurCategories] = useState('')
+
+    useEffect(() => {
+        let actif = true
+
+        async function chargerCategories() {
+            try {
+                const donnees = await recupererCategories()
+
+                if (actif) {
+                    setCategories(donnees)
+                }
+            } catch {
+                if (actif) {
+                    setErreurCategories('Impossible de charger le menu.')
+                }
+            }
+        }
+
+        chargerCategories()
+
+        return () => {
+            actif = false
+        }
+    }, [])
 
     return (
         <>
@@ -25,10 +59,11 @@ function Header() {
                         />
                     </Link>
                     <nav className="menu-desktop" aria-label="Menu principal">
-                        <Link to="/batiment">Bâtiment</Link>
-                        <Link to="/services">Services</Link>
-                        <Link to="/fabrication">Fabrication</Link>
-                        <Link to="/alimentation">Alimentation</Link>
+                        {categories.map((categorie) => (
+                            <Link key={categorie.id} to={`/${categorie.slug}`}>
+                                {categorie.nom}
+                            </Link>
+                        ))}
                     </nav>
                     <button
                         type="button"
@@ -40,6 +75,7 @@ function Header() {
                     >
                         {menuOuvert ? '✕' : '☰'}
                     </button>
+                    {erreurCategories && <p role="alert">{erreurCategories}</p>}
                 </header>
 
                 <nav
@@ -49,30 +85,22 @@ function Header() {
                     hidden={!menuOuvert}
                 >
                     <ul className="list-unstyled">
-                        <li>
-                            <Link to="/batiment" onClick={() => setMenuOuvert(false)}>
-                                <img src={batiment} alt="" width="24" height="24" />
-                                Bâtiment
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/services" onClick={() => setMenuOuvert(false)}>
-                                <img src={services} alt="" width="24" height="24" />
-                                Services
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/fabrication" onClick={() => setMenuOuvert(false)}>
-                                <img src={fabrication} alt="" width="24" height="24" />
-                                Fabrication
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/alimentation" onClick={() => setMenuOuvert(false)}>
-                                <img src={alimentation} alt="" width="24" height="24" />
-                                Alimentation
-                            </Link>
-                        </li>
+                        {categories.map((categorie) => (
+                            <li key={categorie.id}>
+                                <Link
+                                    to={`/${categorie.slug}`}
+                                    onClick={() => setMenuOuvert(false)}
+                                >
+                                    <img
+                                        src={iconesCategories[categorie.slug]}
+                                        alt=""
+                                        width="24"
+                                        height="24"
+                                    />
+                                    {categorie.nom}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
             </div>
