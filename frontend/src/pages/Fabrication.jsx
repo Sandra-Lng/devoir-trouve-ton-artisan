@@ -1,49 +1,31 @@
-import CarteArtisan from '../components/CarteArtisan'
-import bijoutier from '../assets/icons/bijoutier.svg'
-import couturier from '../assets/icons/couturier.svg'
-import ferronnier from '../assets/icons/ferronnier.svg'
+import CarteArtisan from '../components/CarteArtisan.jsx'
+import artisans from '../data/artisans'
 
 function Fabrication() {
-  return (
-    <main className="container contenu-principal">
-      <h1>Les artisans de la fabrication</h1>
+    const artisansFabrication = artisans.filter(
+        (artisan) => artisan.categorie === 'Fabrication'
+    )
 
-      <div className="row">
-        <div className="col-12 col-md-6">
-          <CarteArtisan
-            nom="Claude Quinn"
-            note={4.2}
-            specialite="Bijoutier"
-            ville="Aix-les-Bains"
-            icone={bijoutier}
-            lien="/artisan/claude-quinn"
-          />
-        </div>
+    return (
+        <main className="container contenu-principal">
+            <h1>Les artisans de la fabrication</h1>
 
-        <div className="col-12 col-md-6">
-          <CarteArtisan
-            nom="Amitee Lécuyer"
-            note={4.5}
-            specialite="Couturier"
-            ville="Annecy"
-            icone={couturier}
-            lien="/artisan/amitee-lecuyer"
-          />
-        </div>
-
-        <div className="col-12 col-md-6">
-          <CarteArtisan
-            nom="Ernest Carignan"
-            note={5}
-            specialite="Ferronier"
-            ville="Le Puy-en-Velay"
-            icone={ferronnier}
-            lien="/artisan/ernest-carignan"
-          />
-        </div>
-      </div>
-    </main>
-  )
+            <div className="row">
+                {artisansFabrication.map((artisan) => (
+                    <div className="col-12 col-md-6" key={artisan.slug}>
+                        <CarteArtisan
+                            nom={artisan.nom}
+                            note={artisan.note}
+                            specialite={artisan.specialite}
+                            ville={artisan.ville}
+                            icone={artisan.icone}
+                            lien={`/artisan/${artisan.slug}`}
+                        />
+                    </div>
+                ))}
+            </div>
+        </main>
+    )
 }
 
 export default Fabrication

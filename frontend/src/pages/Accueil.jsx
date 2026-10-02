@@ -2,13 +2,12 @@ import batiment from '../assets/icons/batiment.svg'
 import services from '../assets/icons/services.svg'
 import fabrication from '../assets/icons/fabrication.svg'
 import alimentation from '../assets/icons/alimentation.svg'
-import pain from '../assets/icons/pain.svg'
-import chocolat from '../assets/icons/chocolat.svg'
-import chauffage from '../assets/icons/chauffage.svg'
 import { Link } from 'react-router'
 import CarteArtisan from '../components/CarteArtisan.jsx'
+import artisans from '../data/artisans'
 
 function Accueil() {
+    const artisansDuMois = artisans.filter((artisan) => artisan.top === true)
     return (
         <>
             <main className="container contenu-principal">
@@ -69,38 +68,18 @@ function Accueil() {
                     <h2>Artisans du mois</h2>
 
                     <div className="row">
-                        <div className="col-12 col-md-6 col-lg-4">
-                            <CarteArtisan
-                                nom="Au pain chaud"
-                                note={4.8}
-                                specialite="Boulanger"
-                                ville="Montélimar"
-                                icone={pain}
-                                lien="/artisan/au-pain-chaud"
-                            />
-                        </div>
-
-                        <div className="col-12 col-md-6 col-lg-4">
-                            <CarteArtisan
-                                nom="Chocolaterie Labbé"
-                                note={4.9}
-                                specialite="Chocolatier"
-                                ville="Lyon"
-                                icone={chocolat}
-                                lien="/artisan/chocolaterie-labbe"
-                            />
-                        </div>
-
-                        <div className="col-12 col-md-6 col-lg-4">
-                            <CarteArtisan
-                                nom="Orville Salmons"
-                                note={5}
-                                specialite="Chauffagiste"
-                                ville="Evian"
-                                icone={chauffage}
-                                lien="/artisan/orville-salmons"
-                            />
-                        </div>
+                        {artisansDuMois.map((artisan) => (
+                            <div className="col-12 col-md-6 col-lg-4" key={artisan.slug}>
+                                <CarteArtisan
+                                    nom={artisan.nom}
+                                    note={artisan.note}
+                                    specialite={artisan.specialite}
+                                    ville={artisan.ville}
+                                    icone={artisan.icone}
+                                    lien={`/artisan/${artisan.slug}`}
+                                />
+                            </div>
+                        ))}
                     </div>
                 </section>
             </main>

@@ -20,6 +20,8 @@ const artisans = [
 
   {
     slug: 'orville-salmons',
+    categorie: 'Bâtiment',
+    top: true,
     nom: 'Orville Salmons',
     specialite: 'Chauffagiste',
     note: 5,
@@ -31,6 +33,7 @@ const artisans = [
   },
     {
     slug: 'boutot-et-fils',
+    categorie: 'Bâtiment',
     nom: 'Boutot & fils',
     specialite: 'Menuisier',
     note: 4.7,
@@ -42,6 +45,7 @@ const artisans = [
   },
     {
     slug: 'mont-blanc-electricite',
+    categorie: 'Bâtiment',
     nom: 'Mont Blanc Eléctricité',
     specialite: 'Electricien',
     note: 4.5,
@@ -53,6 +57,7 @@ const artisans = [
   },
   {
     slug: 'vallis-bellemare',
+    categorie: 'Bâtiment',
     nom: 'Vallis Bellemare',
     specialite: 'Plombier',
     note: 4,
@@ -64,6 +69,7 @@ const artisans = [
   },
     {
     slug: 'boucherie-dumont',
+    categorie: 'Alimentation',
     nom: 'Boucherie Dumont',
     specialite: 'Boucher',
     note: 4.5,
@@ -74,6 +80,8 @@ const artisans = [
   },
   {
     slug: 'au-pain-chaud',
+    categorie: 'Alimentation',
+    top: true,
     nom: 'Au pain chaud',
     specialite: 'Boulanger',
     note: 4.8,
@@ -84,6 +92,8 @@ const artisans = [
   },
   {
     slug: 'chocolaterie-labbe',
+    categorie: 'Alimentation',
+    top: true,
     nom: 'Chocolaterie Labbé',
     specialite: 'Chocolatier',
     note: 4.9,
@@ -94,6 +104,7 @@ const artisans = [
   },
   {
     slug: 'traiteur-truchon',
+    categorie: 'Alimentation',
     nom: 'Traiteur Truchon',
     specialite: 'Traiteur',
     note: 4.1,
@@ -104,6 +115,7 @@ const artisans = [
   },
     {
     slug: 'claude-quinn',
+    categorie: 'Fabrication',
     nom: 'Claude Quinn',
     specialite: 'Bijoutier',
     note: 4.2,
@@ -114,6 +126,7 @@ const artisans = [
   },
   {
     slug: 'amitee-lecuyer',
+    categorie: 'Fabrication',
     nom: 'Amitee Lécuyer',
     specialite: 'Couturier',
     note: 4.5,
@@ -124,6 +137,7 @@ const artisans = [
   },
   {
     slug: 'ernest-carignan',
+    categorie: 'Fabrication',
     nom: 'Ernest Carignan',
     specialite: 'Ferronier',
     note: 5,
@@ -134,6 +148,7 @@ const artisans = [
   },
     {
     slug: 'royden-charbonneau',
+    categorie: 'Services',
     nom: 'Royden Charbonneau',
     specialite: 'Coiffeur',
     note: 3.8,
@@ -144,6 +159,7 @@ const artisans = [
   },
   {
     slug: 'leala-dennis',
+    categorie: 'Services',
     nom: 'Leala Dennis',
     specialite: 'Coiffeur',
     note: 3.8,
@@ -154,6 +170,7 @@ const artisans = [
   },
   {
     slug: 'cest-suphair',
+    categorie: 'Services',
     nom: "C'est sup'hair",
     specialite: 'Coiffeur',
     note: 4.1,
@@ -164,6 +181,7 @@ const artisans = [
   },
   {
     slug: 'le-monde-des-fleurs',
+    categorie: 'Services',
     nom: 'Le monde des fleurs',
     specialite: 'Fleuriste',
     note: 4.6,
@@ -174,6 +192,7 @@ const artisans = [
   },
   {
     slug: 'valerie-laderoute',
+    categorie: 'Services',
     nom: 'Valérie Laderoute',
     specialite: 'Toiletteur',
     note: 4.5,
@@ -184,6 +203,7 @@ const artisans = [
   },
   {
     slug: 'cm-graphisme',
+    categorie: 'Services',
     nom: 'CM Graphisme',
     specialite: 'Webdesign',
     note: 4.4,

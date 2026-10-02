@@ -1,17 +1,16 @@
 import { Link } from 'react-router'
 import localisation from '../assets/icons/localisation.svg'
 import chevron from '../assets/icons/chevron.svg'
-import etoile from '../assets/icons/etoile.svg'
 import NoteArtisan from './NoteArtisan'
 
 function CarteArtisan({ nom, note, specialite, ville, icone, lien }) {
     return (
-        <article className="carte-artisan">
+        <article className="carte-artisan position-relative">
             <img src={icone} alt="" width="40" height="40" />
 
             <div>
                 <h3>
-                    <Link to={lien}>{nom}</Link>
+                    <Link to={lien} className="stretched-link">{nom}</Link>
                 </h3>
 
                 <NoteArtisan note={note} />

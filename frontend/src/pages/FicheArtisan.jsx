@@ -10,7 +10,7 @@ function FicheArtisan() {
 
     if (!artisan) {
         return <Page404 />
-}
+    }
 
     return (
         <main className="container contenu-principal">
