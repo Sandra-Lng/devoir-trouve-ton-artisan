@@ -8,6 +8,7 @@ import chauffage from '../assets/icons/chauffage.svg'
 import localisation from '../assets/icons/localisation.svg'
 import chevron from '../assets/icons/chevron.svg'
 import etoile from '../assets/icons/etoile.svg'
+import { Link } from 'react-router'
 
 function Accueil() {
     return (
@@ -17,13 +18,13 @@ function Accueil() {
                 <p>Découvrez les artisans de la région Auvergne-Rhône-Alpes.</p>
                 <div className="row g-3 mt-3">
                     <div className="col-6 col-lg-3">
-                        <a
-                            href="/categorie/batiment"
+                        <Link
+                            to="/batiment"
                             className="btn btn-outline-primary w-100 bouton-categorie"
-                        >
+                            >
                             <img src={batiment} alt="" width="28" height="28" />
                             Bâtiment
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="col-6 col-lg-3">

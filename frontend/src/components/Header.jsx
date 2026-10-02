@@ -4,7 +4,7 @@ import batiment from '../assets/icons/batiment.svg'
 import services from '../assets/icons/services.svg'
 import fabrication from '../assets/icons/fabrication.svg'
 import alimentation from '../assets/icons/alimentation.svg'
-
+import { Link } from 'react-router'
 
 function Header() {
     const [menuOuvert, setMenuOuvert] = useState(false)
@@ -13,15 +13,19 @@ function Header() {
         <>
             <div className="zone-navigation">
                 <header className="container py-3 d-flex justify-content-between align-items-center">
-                    <a href="/" aria-label="Accueil">
+                    <Link
+                        to="/"
+                        aria-label="Accueil"
+                        onClick={() => setMenuOuvert(false)}
+                    >
                         <img
                             src={logo}
                             alt="Trouve ton artisan — Auvergne-Rhône-Alpes"
                             className="site-logo"
                         />
-                    </a>
+                    </Link>
                     <nav className="menu-desktop" aria-label="Menu principal">
-                        <a href="/categorie/batiment">Bâtiment</a>
+                        <Link to="/batiment">Bâtiment</Link>
                         <a href="/categorie/services">Services</a>
                         <a href="/categorie/fabrication">Fabrication</a>
                         <a href="/categorie/alimentation">Alimentation</a>
@@ -46,10 +50,10 @@ function Header() {
                 >
                     <ul className="list-unstyled">
                         <li>
-                            <a href="/categorie/batiment">
-                                <img src={batiment} alt="" width="24" height="24" />
-                                Bâtiment
-                            </a>
+                            <Link to="/batiment" onClick={() => setMenuOuvert(false)}>
+                            <img src={batiment} alt="" width="24" height="24" />
+                            Bâtiment
+                            </Link>
                         </li>
                         <li>
                             <a href="/categorie/services">
