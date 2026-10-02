@@ -17,9 +17,15 @@ function App() {
             className="site-logo"
           />
         </a>
+        <nav className="menu-desktop" aria-label="Menu principal">
+          <a href="/categorie/batiment">Bâtiment</a>
+          <a href="/categorie/services">Services</a>
+          <a href="/categorie/fabrication">Fabrication</a>
+          <a href="/categorie/alimentation">Alimentation</a>
+        </nav>
         <button
             type="button"
-            className="btn"
+            className="btn bouton-menu"
             onClick={() => setMenuOuvert(!menuOuvert)}
             aria-expanded={menuOuvert}
             aria-controls="menu-principal"
@@ -76,7 +82,7 @@ function App() {
         <h1>Trouvez votre artisan</h1>
         <p>Découvrez les artisans de la région Auvergne-Rhône-Alpes.</p>
         <div className="row g-3 mt-3">
-          <div className="col-6">
+          <div className="col-6 col-lg-3">
             <a
               href="/categorie/batiment"
               className="btn btn-outline-primary w-100 bouton-categorie"
@@ -86,7 +92,7 @@ function App() {
             </a>
           </div>
 
-          <div className="col-6">
+          <div className="col-6 col-lg-3">
             <a
               href="/categorie/services"
               className="btn btn-outline-primary w-100 bouton-categorie"
@@ -96,7 +102,7 @@ function App() {
             </a>
           </div>
 
-          <div className="col-6">
+          <div className="col-6 col-lg-3">
             <a
             href="/categorie/fabrication"
             className="btn btn-outline-primary w-100 bouton-categorie"
@@ -106,7 +112,7 @@ function App() {
           </a>
           </div>
 
-          <div className="col-6">
+          <div className="col-6 col-lg-3">
             <a
               href="/categorie/alimentation"
               className="btn btn-outline-primary w-100 bouton-categorie"

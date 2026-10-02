@@ -197,3 +197,50 @@ h2 {
   border-left: 1px solid rgba(255, 255, 255, 0.35);
   padding-left: 24px;
 }
+
+@media (min-width: 768px) {
+  .etapes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .etapes li {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .etapes {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.menu-desktop {
+  display: none;
+}
+
+.menu-desktop a {
+  color: $bleu-fonce;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.menu-desktop a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .menu-desktop {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .bouton-menu {
+    display: none;
+  }
+
+  #menu-principal {
+    display: none;
+  }
+}
