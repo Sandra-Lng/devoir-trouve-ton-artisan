@@ -15,6 +15,7 @@ function App() {
   const [menuOuvert, setMenuOuvert] = useState(false)
   return (
     <>
+    <div className="zone-navigation">
       <header className="container py-3 d-flex justify-content-between align-items-center">
         <a href="/" aria-label="Accueil">
           <img
@@ -40,7 +41,7 @@ function App() {
           {menuOuvert ? '✕' : '☰'}
         </button>
       </header>
-
+    
       <nav
         id="menu-principal"
         className="container"
@@ -48,12 +49,41 @@ function App() {
         hidden={!menuOuvert}
       >
         <ul className="list-unstyled">
-          <li><a href="/categorie/batiment">Bâtiment</a></li>
-          <li><a href="/categorie/services">Services</a></li>
-          <li><a href="/categorie/fabrication">Fabrication</a></li>
-          <li><a href="/categorie/alimentation">Alimentation</a></li>
+          <li>
+            <a href="/categorie/batiment">
+              <img src={batiment} alt="" width="24" height="24" />
+              Bâtiment
+            </a>
+          </li>
+          <li>
+            <a href="/categorie/services">
+              <img src={services} alt="" width="24" height="24" />
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="/categorie/fabrication">
+              <img src={fabrication} alt="" width="24" height="24" />
+              Fabrication
+            </a>
+          </li>
+          <li>
+            <a href="/categorie/alimentation">
+              <img src={alimentation} alt="" width="24" height="24" />
+              Alimentation
+            </a>
+          </li>
         </ul>
       </nav>
+    </div>
+      {menuOuvert && (
+        <button
+          type="button"
+          className="fond-menu"
+          aria-label="Fermer le menu"
+          onClick={() => setMenuOuvert(false)}
+        />
+      )}
 
       <div className="container mt-3">
         <label htmlFor="recherche" className="visually-hidden">
