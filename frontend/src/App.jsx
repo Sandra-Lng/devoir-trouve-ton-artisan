@@ -7,6 +7,7 @@ import Batiment from './pages/Batiment.jsx'
 import Services from './pages/Services'
 import Fabrication from './pages/Fabrication'
 import Alimentation from './pages/Alimentation'
+import FicheArtisan from './pages/FicheArtisan'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/fabrication" element={<Fabrication />} />
         <Route path="/alimentation" element={<Alimentation />} />
+        <Route path="/artisan/:slug" element={<FicheArtisan />} />
       </Routes>
       <Footer />
     </>
