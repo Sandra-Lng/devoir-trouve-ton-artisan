@@ -4,6 +4,7 @@ import pain from '../assets/icons/pain.svg'
 import chocolat from '../assets/icons/chocolat.svg'
 import traiteur from '../assets/icons/traiteur.svg'
 
+
 function Alimentation() {
   return (
     <main className="container contenu-principal">
@@ -46,7 +47,7 @@ function Alimentation() {
         <div className="col-12 col-md-6">
           <CarteArtisan
             nom="Traiteur Truchon"
-            note={5}
+            note={4.1}
             specialite="Traiteur"
             ville="Lyon"
             icone={traiteur}

@@ -1,6 +1,5 @@
 import { useParams } from 'react-router'
 import artisans from '../data/artisans'
-import chauffage from '../assets/icons/chauffage.svg'
 import localisation from '../assets/icons/localisation.svg'
 import NoteArtisan from '../components/NoteArtisan'
 
@@ -30,13 +29,18 @@ function FicheArtisan() {
                     </p>
                 </div>
 
-                <img src={chauffage} alt="" width="64" height="64" />
+                <img src={artisan.icone} alt="" width="64" height="64" />
             </div>
 
             <div className="row g-4 mt-5">
                 <section className="col-12 col-lg-6">
                     <h2>À propos</h2>
                     <p>{artisan.apropos}</p>
+                    {artisan.siteWeb && (
+                        <a href={artisan.siteWeb}>
+                            Visiter le site web de {artisan.nom}
+                        </a>
+                    )}
                 </section>
 
                 <section className="col-12 col-lg-6">
