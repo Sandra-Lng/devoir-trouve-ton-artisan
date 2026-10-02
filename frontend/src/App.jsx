@@ -5,6 +5,7 @@ import Recherche from './components/Recherche.jsx'
 import { Routes, Route } from 'react-router'
 import Batiment from './pages/Batiment.jsx'
 import Services from './pages/Services'
+import Fabrication from './pages/Fabrication'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Accueil />} />
         <Route path="/batiment" element={<Batiment />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/fabrication" element={<Fabrication />} />
       </Routes>
       <Footer />
     </>

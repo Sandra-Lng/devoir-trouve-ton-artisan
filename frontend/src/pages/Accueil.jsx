@@ -36,13 +36,13 @@ function Accueil() {
                     </div>
 
                     <div className="col-6 col-lg-3">
-                        <a
-                            href="/categorie/fabrication"
+                        <Link
+                            to="/fabrication"
                             className="btn btn-outline-primary w-100 bouton-categorie"
-                        >
+                            >
                             <img src={fabrication} alt="" width="28" height="28" />
                             Fabrication
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="col-6 col-lg-3">

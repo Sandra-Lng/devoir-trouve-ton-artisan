@@ -2,7 +2,7 @@ import CarteArtisan from '../components/CarteArtisan.jsx'
 import chauffage from '../assets/icons/chauffage.svg'
 import marteau from '../assets/icons/marteau.svg'
 import electricite from '../assets/icons/electricite.svg'
-import plomberie from '../assets/icons/services.svg'
+import plomberie from '../assets/icons/plombier.svg'
 
 function Batiment() {
     return (

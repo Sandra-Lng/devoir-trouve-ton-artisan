@@ -27,7 +27,7 @@ function Header() {
                     <nav className="menu-desktop" aria-label="Menu principal">
                         <Link to="/batiment">Bâtiment</Link>
                         <Link to="/services">Services</Link>
-                        <a href="/categorie/fabrication">Fabrication</a>
+                        <Link to="/fabrication">Fabrication</Link>
                         <a href="/categorie/alimentation">Alimentation</a>
                     </nav>
                     <button
@@ -62,10 +62,10 @@ function Header() {
                             </Link>
                         </li>
                         <li>
-                            <a href="/categorie/fabrication">
+                            <Link to="/fabrication" onClick={() => setMenuOuvert(false)}>
                                 <img src={fabrication} alt="" width="24" height="24" />
                                 Fabrication
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a href="/categorie/alimentation">
