@@ -39,20 +39,20 @@ function Accueil() {
                         <Link
                             to="/fabrication"
                             className="btn btn-outline-primary w-100 bouton-categorie"
-                            >
+                        >
                             <img src={fabrication} alt="" width="28" height="28" />
                             Fabrication
                         </Link>
                     </div>
 
                     <div className="col-6 col-lg-3">
-                        <a
-                            href="/categorie/alimentation"
+                        <Link
+                            to="/alimentation"
                             className="btn btn-outline-primary w-100 bouton-categorie"
                         >
                             <img src={alimentation} alt="" width="28" height="28" />
                             Alimentation
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <section className="mt-5">

@@ -28,7 +28,7 @@ function Header() {
                         <Link to="/batiment">Bâtiment</Link>
                         <Link to="/services">Services</Link>
                         <Link to="/fabrication">Fabrication</Link>
-                        <a href="/categorie/alimentation">Alimentation</a>
+                        <Link to="/alimentation">Alimentation</Link>
                     </nav>
                     <button
                         type="button"
@@ -68,10 +68,10 @@ function Header() {
                             </Link>
                         </li>
                         <li>
-                            <a href="/categorie/alimentation">
+                            <Link to="/alimentation" onClick={() => setMenuOuvert(false)}>
                                 <img src={alimentation} alt="" width="24" height="24" />
                                 Alimentation
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </nav>
