@@ -26,7 +26,7 @@ function Header() {
                     </Link>
                     <nav className="menu-desktop" aria-label="Menu principal">
                         <Link to="/batiment">Bâtiment</Link>
-                        <a href="/categorie/services">Services</a>
+                        <Link to="/services">Services</Link>
                         <a href="/categorie/fabrication">Fabrication</a>
                         <a href="/categorie/alimentation">Alimentation</a>
                     </nav>
@@ -51,15 +51,15 @@ function Header() {
                     <ul className="list-unstyled">
                         <li>
                             <Link to="/batiment" onClick={() => setMenuOuvert(false)}>
-                            <img src={batiment} alt="" width="24" height="24" />
-                            Bâtiment
+                                <img src={batiment} alt="" width="24" height="24" />
+                                Bâtiment
                             </Link>
                         </li>
                         <li>
-                            <a href="/categorie/services">
+                            <Link to="/services" onClick={() => setMenuOuvert(false)}>
                                 <img src={services} alt="" width="24" height="24" />
                                 Services
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a href="/categorie/fabrication">
