@@ -1,5 +1,9 @@
 import logo from './assets/Logo.png'
 import { useState } from 'react'
+import batiment from './assets/icons/batiment.svg'
+import services from './assets/icons/services.svg'
+import fabrication from './assets/icons/fabrication.svg'
+import alimentation from './assets/icons/alimentation.svg'
 
 function App() {
   const [menuOuvert, setMenuOuvert] = useState(false)
@@ -77,21 +81,7 @@ function App() {
               href="/categorie/batiment"
               className="btn btn-outline-primary w-100 bouton-categorie"
             >
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="m3 10 9-7 9 7" />
-                <path d="M5 9v12h14V9" />
-                <path d="M9 21v-7h6v7" />
-              </svg>
+              <img src={batiment} alt="" width="28" height="28" />
               Bâtiment
             </a>
           </div>
@@ -101,31 +91,27 @@ function App() {
               href="/categorie/services"
               className="btn btn-outline-primary w-100 bouton-categorie"
             >
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M14.7 6.3a5 5 0 0 0-6.4 6.4L3 18a2.1 2.1 0 0 0 3 3l5.3-5.3a5 5 0 0 0 6.4-6.4l-3 3-3-3z" />
-              </svg>
+              <img src={services} alt="" width="28" height="28" />
               Services
             </a>
           </div>
 
           <div className="col-6">
-            <a href="/categorie/fabrication" className="btn btn-outline-primary w-100 bouton-categorie">
-              Fabrication
-            </a>
+            <a
+            href="/categorie/fabrication"
+            className="btn btn-outline-primary w-100 bouton-categorie"
+          >
+            <img src={fabrication} alt="" width="28" height="28" />
+            Fabrication
+          </a>
           </div>
 
           <div className="col-6">
-            <a href="/categorie/alimentation" className="btn btn-outline-primary w-100 bouton-categorie">
+            <a
+              href="/categorie/alimentation"
+              className="btn btn-outline-primary w-100 bouton-categorie"
+            >
+              <img src={alimentation} alt="" width="28" height="28" />
               Alimentation
             </a>
           </div>
