@@ -1,0 +1,199 @@
+$bleu: #0074c7;
+$bleu-fonce: #00497c;
+$fond: #f1f8fc;
+$texte: #384050;
+
+body {
+  margin: 0;
+  background-color: $fond;
+  color: $texte;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.site-logo {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+}
+
+#menu-principal a {
+  display: block;
+  padding: 12px 0;
+  color: $bleu-fonce;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#menu-principal li {
+  border-bottom: 1px solid rgba(0, 73, 124, 0.15);
+}
+
+#menu-principal li:last-child {
+  border-bottom: none;
+}
+
+#recherche {
+  height: 48px;
+  border: 1px solid $bleu-fonce;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.contenu-principal {
+  margin-top: 32px;
+}
+
+.champ-recherche {
+  position: relative;
+}
+
+.icone-recherche {
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  color: $bleu-fonce;
+  pointer-events: none;
+}
+
+#recherche {
+  padding-left: 52px;
+}
+
+.bouton-categorie {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $bleu-fonce;
+  border-color: $bleu-fonce;
+  border-radius: 8px;
+  gap: 12px;
+  background-color: white;
+  font-weight: 700;
+}
+
+.etapes {
+  list-style: none;
+  padding: 0;
+  counter-reset: etape;
+}
+
+.etapes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 16px;
+  counter-increment: etape;
+}
+
+.etapes li::before {
+  content: counter(etape);
+  background-color: $bleu;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.carte-artisan {
+  background-color: white;
+  border: 1px solid $bleu-fonce;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 24px;
+}
+
+.carte-artisan h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.carte-artisan p {
+  margin-bottom: 4px;
+}
+
+.carte-artisan h3 a {
+  color: $texte;
+  text-decoration: none;
+}
+
+.carte-artisan h3 a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.pied-de-page {
+  margin-top: 48px;
+  padding: 32px 0;
+  background-color: $bleu-fonce;
+  color: white;
+}
+
+.pied-de-page h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.pied-de-page a {
+  color: white;
+  text-decoration: none;
+}
+
+.pied-de-page a:hover {
+  text-decoration: underline;
+}
+
+.pied-de-page li {
+  margin-bottom: 12px;
+}
+
+.pied-de-page p {
+  font-size: 14px;
+}
+
+.pied-de-page hr {
+  margin: 16px 0;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  opacity: 1;
+}
+
+.liens-footer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+  margin-bottom: 0;
+}
+
+.pied-de-page .liens-footer li {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.liens-footer li:nth-child(even) {
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
+  padding-left: 24px;
+}
