@@ -9,6 +9,7 @@ import Fabrication from './pages/Fabrication'
 import Alimentation from './pages/Alimentation'
 import FicheArtisan from './pages/FicheArtisan'
 import ResultatsRecherche from './pages/ResultatsRecherche'
+import Page404 from './pages/Page404'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/alimentation" element={<Alimentation />} />
         <Route path="/artisan/:slug" element={<FicheArtisan />} />
         <Route path="/recherche" element={<ResultatsRecherche />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
       <Footer />
     </>

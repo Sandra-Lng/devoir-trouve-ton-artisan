@@ -2,18 +2,15 @@ import { useParams } from 'react-router'
 import artisans from '../data/artisans'
 import localisation from '../assets/icons/localisation.svg'
 import NoteArtisan from '../components/NoteArtisan'
+import Page404 from './Page404'
 
 function FicheArtisan() {
     const { slug } = useParams()
     const artisan = artisans.find((artisan) => artisan.slug === slug)
 
     if (!artisan) {
-        return (
-            <main className="container contenu-principal">
-                <h1>Artisan introuvable</h1>
-            </main>
-        )
-    }
+        return <Page404 />
+}
 
     return (
         <main className="container contenu-principal">
