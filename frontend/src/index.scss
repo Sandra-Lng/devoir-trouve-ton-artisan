@@ -120,6 +120,9 @@ h2 {
   border-radius: 8px;
   padding: 16px;
   margin-top: 24px;
+  display: flex;
+align-items: center;
+gap: 16px;
 }
 
 .carte-artisan h3 {
@@ -243,4 +246,27 @@ h2 {
   #menu-principal {
     display: none;
   }
+}
+
+.ville-artisan {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chevron-artisan {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.note-artisan {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.etoiles-artisan {
+  display: flex;
+  gap: 2px;
 }
