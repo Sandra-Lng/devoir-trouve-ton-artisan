@@ -1,3 +1,5 @@
+import { Link } from 'react-router'
+
 function Footer() {
     return (
         <footer className="pied-de-page">
@@ -16,16 +18,16 @@ function Footer() {
 
                 <ul className="list-unstyled liens-footer">
                     <li>
-                        <a href="/mentions-legales">Mentions légales</a>
+                        <Link to="/mentions-legales">Mentions légales</Link>
                     </li>
                     <li>
-                        <a href="/donnees-personnelles">Données personnelles</a>
+                        <Link to="/donnees-personnelles">Données personnelles</Link>
                     </li>
                     <li>
-                        <a href="/accessibilite">Accessibilité</a>
+                        <Link to="/accessibilite">Accessibilité</Link>
                     </li>
                     <li>
-                        <a href="/cookies">Cookies</a>
+                        <Link to="/cookies">Cookies</Link>
                     </li>
                 </ul>
             </div>

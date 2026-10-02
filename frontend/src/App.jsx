@@ -10,6 +10,7 @@ import Alimentation from './pages/Alimentation'
 import FicheArtisan from './pages/FicheArtisan'
 import ResultatsRecherche from './pages/ResultatsRecherche'
 import Page404 from './pages/Page404'
+import PageConstruction from './pages/PageConstruction'
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
         <Route path="/artisan/:slug" element={<FicheArtisan />} />
         <Route path="/recherche" element={<ResultatsRecherche />} />
         <Route path="*" element={<Page404 />} />
+        <Route path="/mentions-legales" element={<PageConstruction />} />
+        <Route path="/donnees-personnelles" element={<PageConstruction />} />
+        <Route path="/accessibilite" element={<PageConstruction />} />
+        <Route path="/cookies" element={<PageConstruction />} />
       </Routes>
       <Footer />
     </>
