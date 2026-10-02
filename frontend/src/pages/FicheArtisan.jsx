@@ -1,12 +1,61 @@
 import { useParams } from 'react-router'
-import artisans from '../data/artisans'
+import { useEffect, useState } from 'react'
+import { recupererArtisans } from '../services/api'
 import localisation from '../assets/icons/localisation.svg'
 import NoteArtisan from '../components/NoteArtisan'
 import Page404 from './Page404'
 
 function FicheArtisan() {
     const { slug } = useParams()
+    const [artisans, setArtisans] = useState([])
+    const [chargement, setChargement] = useState(true)
+    const [erreur, setErreur] = useState('')
+
+    useEffect(() => {
+        let actif = true
+
+        async function chargerArtisans() {
+            try {
+                const donnees = await recupererArtisans()
+
+                if (actif) {
+                    setArtisans(donnees)
+                }
+            } catch {
+                if (actif) {
+                    setErreur('Impossible de charger la fiche artisan.')
+                }
+            } finally {
+                if (actif) {
+                    setChargement(false)
+                }
+            }
+        }
+
+        chargerArtisans()
+
+        return () => {
+            actif = false
+        }
+    }, [])
+
     const artisan = artisans.find((artisan) => artisan.slug === slug)
+
+    if (chargement) {
+        return (
+            <main className="container contenu-principal">
+                <p role="status">Chargement de la fiche…</p>
+            </main>
+        )
+    }
+
+    if (erreur) {
+        return (
+            <main className="container contenu-principal">
+                <p role="alert">{erreur}</p>
+            </main>
+        )
+    }
 
     if (!artisan) {
         return <Page404 />

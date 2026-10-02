@@ -1,7 +1,40 @@
+import { useEffect, useState } from 'react'
 import CarteArtisan from '../components/CarteArtisan.jsx'
-import artisans from '../data/artisans'
+import { recupererArtisans } from '../services/api'
 
 function Services() {
+    const [artisans, setArtisans] = useState([])
+    const [chargement, setChargement] = useState(true)
+    const [erreur, setErreur] = useState('')
+
+    useEffect(() => {
+        let actif = true
+
+        async function chargerArtisans() {
+            try {
+                const donnees = await recupererArtisans()
+
+                if (actif) {
+                    setArtisans(donnees)
+                }
+            } catch {
+                if (actif) {
+                    setErreur('Impossible de charger les artisans.')
+                }
+            } finally {
+                if (actif) {
+                    setChargement(false)
+                }
+            }
+        }
+
+        chargerArtisans()
+
+        return () => {
+            actif = false
+        }
+    }, [])
+
     const artisansServices = artisans.filter(
         (artisan) => artisan.categorie === 'Services'
     )
@@ -10,20 +43,25 @@ function Services() {
         <main className="container contenu-principal">
             <h1>Les artisans des services</h1>
 
-            <div className="row">
-                {artisansServices.map((artisan) => (
-                    <div className="col-12 col-md-6" key={artisan.slug}>
-                        <CarteArtisan
-                            nom={artisan.nom}
-                            note={artisan.note}
-                            specialite={artisan.specialite}
-                            ville={artisan.ville}
-                            icone={artisan.icone}
-                            lien={`/artisan/${artisan.slug}`}
-                        />
-                    </div>
-                ))}
-            </div>
+            {chargement && <p role="status">Chargement des artisans…</p>}
+            {erreur && <p role="alert">{erreur}</p>}
+
+            {!chargement && !erreur && (
+                <div className="row">
+                    {artisansServices.map((artisan) => (
+                        <div className="col-12 col-md-6" key={artisan.slug}>
+                            <CarteArtisan
+                                nom={artisan.nom}
+                                note={artisan.note}
+                                specialite={artisan.specialite}
+                                ville={artisan.ville}
+                                icone={artisan.icone}
+                                lien={`/artisan/${artisan.slug}`}
+                            />
+                        </div>
+                    ))}
+                </div>
+            )}
         </main>
     )
 }

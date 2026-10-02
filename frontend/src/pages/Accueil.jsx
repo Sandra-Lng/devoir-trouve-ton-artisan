@@ -4,9 +4,41 @@ import fabrication from '../assets/icons/fabrication.svg'
 import alimentation from '../assets/icons/alimentation.svg'
 import { Link } from 'react-router'
 import CarteArtisan from '../components/CarteArtisan.jsx'
-import artisans from '../data/artisans'
+import { useEffect, useState } from 'react'
+import { recupererArtisans } from '../services/api'
 
 function Accueil() {
+    const [artisans, setArtisans] = useState([])
+    const [chargement, setChargement] = useState(true)
+    const [erreur, setErreur] = useState('')
+
+    useEffect(() => {
+        let actif = true
+
+        async function chargerArtisans() {
+            try {
+                const donnees = await recupererArtisans()
+
+                if (actif) {
+                    setArtisans(donnees)
+                }
+            } catch {
+                if (actif) {
+                    setErreur('Impossible de charger les artisans du mois.')
+                }
+            } finally {
+                if (actif) {
+                    setChargement(false)
+                }
+            }
+        }
+
+        chargerArtisans()
+
+        return () => {
+            actif = false
+        }
+    }, [])
     const artisansDuMois = artisans.filter((artisan) => artisan.top === true)
     return (
         <>
@@ -66,6 +98,8 @@ function Accueil() {
                 </section>
                 <section className="mt-5">
                     <h2>Artisans du mois</h2>
+                    {chargement && <p role="status">Chargement des artisans…</p>}
+                    {erreur && <p role="alert">{erreur}</p>}
 
                     <div className="row">
                         {artisansDuMois.map((artisan) => (
