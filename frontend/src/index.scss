@@ -307,3 +307,29 @@ gap: 16px;
     display: none;
   }
 }
+.etoile-note {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.etoile-note img {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.etoile-grise {
+  filter: grayscale(1);
+  opacity: 0.3;
+}
+
+.etoile-remplissage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  overflow: hidden;
+}

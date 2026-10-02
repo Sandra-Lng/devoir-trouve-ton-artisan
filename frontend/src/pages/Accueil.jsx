@@ -5,10 +5,8 @@ import alimentation from '../assets/icons/alimentation.svg'
 import pain from '../assets/icons/pain.svg'
 import chocolat from '../assets/icons/chocolat.svg'
 import chauffage from '../assets/icons/chauffage.svg'
-import localisation from '../assets/icons/localisation.svg'
-import chevron from '../assets/icons/chevron.svg'
-import etoile from '../assets/icons/etoile.svg'
 import { Link } from 'react-router'
+import CarteArtisan from '../components/CarteArtisan.jsx'
 
 function Accueil() {
     return (
@@ -72,105 +70,36 @@ function Accueil() {
 
                     <div className="row">
                         <div className="col-12 col-md-6 col-lg-4">
-                            <article className="carte-artisan">
-                                <img src={pain} alt="" width="40" height="40" />
-
-                                <div>
-                                    <h3>
-                                        <a href="/artisan/au-pain-chaud">Au pain chaud</a>
-                                    </h3>
-                                    <div className="note-artisan">
-                                        <span className="etoiles-artisan" aria-hidden="true">
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                        </span>
-                                        <span>4,8 / 5</span>
-                                    </div>
-                                    <p>Boulanger</p>
-                                    <p className="ville-artisan">
-                                        <img src={localisation} alt="" width="16" height="16" />
-                                        Montélimar
-                                    </p>
-                                </div>
-                                <img
-                                    src={chevron}
-                                    alt=""
-                                    width="20"
-                                    height="20"
-                                    className="chevron-artisan"
-                                />
-                            </article>
+                            <CarteArtisan
+                                nom="Au pain chaud"
+                                note={4.8}
+                                specialite="Boulanger"
+                                ville="Montélimar"
+                                icone={pain}
+                                lien="/artisan/au-pain-chaud"
+                            />
                         </div>
 
                         <div className="col-12 col-md-6 col-lg-4">
-                            <article className="carte-artisan">
-                                <img src={chocolat} alt="" width="40" height="40" />
-
-                                <div>
-                                    <h3>
-                                        <a href="/artisan/chocolaterie-labbe">Chocolaterie Labbé</a>
-                                    </h3>
-                                    <div className="note-artisan">
-                                        <span className="etoiles-artisan" aria-hidden="true">
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                        </span>
-                                        <span>4,9 / 5</span>
-                                    </div>
-                                    <p>Chocolatier</p>
-                                    <p className="ville-artisan">
-                                        <img src={localisation} alt="" width="16" height="16" />
-                                        Lyon
-                                    </p>
-                                </div>
-                                <img
-                                    src={chevron}
-                                    alt=""
-                                    width="20"
-                                    height="20"
-                                    className="chevron-artisan"
-                                />
-                            </article>
+                            <CarteArtisan
+                                nom="Chocolaterie Labbé"
+                                note={4.9}
+                                specialite="Chocolatier"
+                                ville="Lyon"
+                                icone={chocolat}
+                                lien="/artisan/chocolaterie-labbe"
+                            />
                         </div>
 
                         <div className="col-12 col-md-6 col-lg-4">
-                            <article className="carte-artisan">
-                                <img src={chauffage} alt="" width="40" height="40" />
-
-                                <div>
-                                    <h3>
-                                        <a href="/artisan/orville-salmons">Orville Salmons</a>
-                                    </h3>
-                                    <div className="note-artisan">
-                                        <span className="etoiles-artisan" aria-hidden="true">
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                            <img src={etoile} alt="" width="16" height="16" />
-                                        </span>
-                                        <span>5 / 5</span>
-                                    </div>
-                                    <p>Chauffagiste</p>
-                                    <p className="ville-artisan">
-                                        <img src={localisation} alt="" width="16" height="16" />
-                                        Evian
-                                    </p>
-                                </div>
-                                <img
-                                    src={chevron}
-                                    alt=""
-                                    width="20"
-                                    height="20"
-                                    className="chevron-artisan"
-                                />
-                            </article>
+                            <CarteArtisan
+                                nom="Orville Salmons"
+                                note={5}
+                                specialite="Chauffagiste"
+                                ville="Evian"
+                                icone={chauffage}
+                                lien="/artisan/orville-salmons"
+                            />
                         </div>
                     </div>
                 </section>
