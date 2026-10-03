@@ -43,6 +43,23 @@ function Header() {
         }
     }, [])
 
+    useEffect(() => {
+        if (!menuOuvert) return
+
+        function fermerAvecEchap(event) {
+            if (event.key === 'Escape') {
+                setMenuOuvert(false)
+                document.querySelector('.bouton-menu')?.focus()
+            }
+        }
+
+        document.addEventListener('keydown', fermerAvecEchap)
+
+        return () => {
+            document.removeEventListener('keydown', fermerAvecEchap)
+        }
+    }, [menuOuvert])
+
     return (
         <>
             <div className="zone-navigation">
