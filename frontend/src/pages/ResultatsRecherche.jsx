@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router'
 import { recupererArtisans } from '../services/api'
 import CarteArtisan from '../components/CarteArtisan'
+import Seo from '../components/Seo'
 
 function ResultatsRecherche() {
     const [parametres] = useSearchParams()
@@ -45,6 +46,10 @@ function ResultatsRecherche() {
 
     return (
         <main className="container contenu-principal">
+            <Seo
+                titre="Résultats de recherche | Trouve ton artisan"
+                description="Recherchez un artisan par son nom en Auvergne-Rhône-Alpes et consultez sa fiche pour le contacter."
+            />
             <h1>Résultats de recherche</h1>
             <p>Recherche : {nomRecherche}</p>
 

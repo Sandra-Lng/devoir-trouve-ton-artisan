@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import CarteArtisan from '../components/CarteArtisan.jsx'
 import { recupererArtisans } from '../services/api'
+import Seo from '../components/Seo'
 
 function Fabrication() {
     const [artisans, setArtisans] = useState([])
@@ -41,6 +42,10 @@ function Fabrication() {
 
     return (
         <main className="container contenu-principal">
+            <Seo
+                titre="Artisans de la fabrication | Trouve ton artisan"
+                description="Découvrez les bijoutiers, couturiers et ferronniers en Auvergne-Rhône-Alpes et contactez un artisan."
+            />
             <h1>Les artisans de la fabrication</h1>
 
             {chargement && <p role="status">Chargement des artisans…</p>}

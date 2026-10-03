@@ -6,6 +6,7 @@ import { Link } from 'react-router'
 import CarteArtisan from '../components/CarteArtisan.jsx'
 import { useEffect, useState } from 'react'
 import { recupererArtisans } from '../services/api'
+import Seo from '../components/Seo'
 
 function Accueil() {
     const [artisans, setArtisans] = useState([])
@@ -42,6 +43,10 @@ function Accueil() {
     const artisansDuMois = artisans.filter((artisan) => artisan.top === true)
     return (
         <>
+            <Seo
+                titre="Trouvez votre artisan en Auvergne-Rhône-Alpes"
+                description="Découvrez les artisans d’Auvergne-Rhône-Alpes et contactez un professionnel du bâtiment, de l’alimentation, de la fabrication ou des services."
+            />
             <main className="container contenu-principal">
                 <h1>Trouvez votre artisan</h1>
                 <p>Découvrez les artisans de la région Auvergne-Rhône-Alpes.</p>

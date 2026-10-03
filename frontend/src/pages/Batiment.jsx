@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import CarteArtisan from '../components/CarteArtisan.jsx'
 import { recupererArtisans } from '../services/api'
+import Seo from '../components/Seo'
 
 function Batiment() {
     const [artisans, setArtisans] = useState([])
@@ -41,6 +42,10 @@ function Batiment() {
 
     return (
         <main className="container contenu-principal">
+            <Seo
+                titre="Artisans du bâtiment | Trouve ton artisan"
+                description="Trouvez un menuisier, un électricien, un chauffagiste ou un plombier en Auvergne-Rhône-Alpes et contactez-le."
+            />
             <h1>Les artisans du bâtiment</h1>
 
             {chargement && <p role="status">Chargement des artisans…</p>}

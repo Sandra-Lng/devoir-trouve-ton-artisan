@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import CarteArtisan from '../components/CarteArtisan.jsx'
 import { recupererArtisans } from '../services/api'
+import Seo from '../components/Seo'
 
 function Alimentation() {
     const [artisans, setArtisans] = useState([])
@@ -41,6 +42,10 @@ function Alimentation() {
 
     return (
         <main className="container contenu-principal">
+            <Seo
+                titre="Artisans de l’alimentation | Trouve ton artisan"
+                description="Découvrez les boulangers, bouchers, chocolatiers et traiteurs en Auvergne-Rhône-Alpes et contactez un artisan."
+            />
             <h1>Les artisans de l’alimentation</h1>
 
             {chargement && <p role="status">Chargement des artisans…</p>}

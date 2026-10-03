@@ -4,6 +4,7 @@ import { recupererArtisans, envoyerContact } from '../services/api'
 import localisation from '../assets/icons/localisation.svg'
 import NoteArtisan from '../components/NoteArtisan'
 import Page404 from './Page404'
+import Seo from '../components/Seo'
 
 function FicheArtisan() {
     const { slug } = useParams()
@@ -97,6 +98,10 @@ function FicheArtisan() {
 
     return (
         <main className="container contenu-principal">
+            <Seo
+                titre={`${artisan.nom} | Trouve ton artisan`}
+                description={`Découvrez ${artisan.nom}, ${artisan.specialite} à ${artisan.ville}, et contactez cet artisan via le formulaire.`}
+            />
             <div className="d-flex justify-content-between align-items-center">
                 <div>
                     <h1>{artisan.nom}</h1>
