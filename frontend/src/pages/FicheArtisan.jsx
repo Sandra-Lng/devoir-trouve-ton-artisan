@@ -69,7 +69,9 @@ function FicheArtisan() {
             formulaire.reset()
         } catch (erreur) {
             setErreurContact(
-                erreur.message || 'Impossible d’envoyer le message.'
+                erreur instanceof TypeError
+                    ? 'Impossible de joindre le serveur. Réessayez plus tard.'
+                    : erreur.message || 'Impossible d’envoyer le message.'
             )
         } finally {
             setEnvoiEnCours(false)
