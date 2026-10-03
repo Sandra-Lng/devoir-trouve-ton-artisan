@@ -140,6 +140,7 @@ function FicheArtisan() {
                                 type="text"
                                 className="form-control"
                                 autoComplete="name"
+                                maxLength={100}
                                 required
                             />
                         </div>
@@ -154,6 +155,7 @@ function FicheArtisan() {
                                 type="email"
                                 className="form-control"
                                 autoComplete="email"
+                                maxLength={254}
                                 required
                             />
                         </div>
@@ -167,6 +169,7 @@ function FicheArtisan() {
                                 name="objet"
                                 type="text"
                                 className="form-control"
+                                maxLength={150}
                                 required
                             />
                         </div>
@@ -180,6 +183,7 @@ function FicheArtisan() {
                                 name="message"
                                 className="form-control"
                                 rows="6"
+                                maxLength={5000}
                                 required
                             />
                         </div>
