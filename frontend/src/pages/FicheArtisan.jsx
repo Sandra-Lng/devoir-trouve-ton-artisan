@@ -1,6 +1,6 @@
 import { useParams } from 'react-router'
 import { useEffect, useState } from 'react'
-import { recupererArtisans } from '../services/api'
+import { recupererArtisans, envoyerContact } from '../services/api'
 import localisation from '../assets/icons/localisation.svg'
 import NoteArtisan from '../components/NoteArtisan'
 import Page404 from './Page404'
@@ -10,6 +10,9 @@ function FicheArtisan() {
     const [artisans, setArtisans] = useState([])
     const [chargement, setChargement] = useState(true)
     const [erreur, setErreur] = useState('')
+    const [envoiEnCours, setEnvoiEnCours] = useState(false)
+    const [succesContact, setSuccesContact] = useState('')
+    const [erreurContact, setErreurContact] = useState('')
 
     useEffect(() => {
         let actif = true
@@ -40,6 +43,37 @@ function FicheArtisan() {
     }, [])
 
     const artisan = artisans.find((artisan) => artisan.slug === slug)
+
+    async function gererEnvoi(event) {
+        event.preventDefault()
+
+        if (envoiEnCours) return
+
+        const formulaire = event.currentTarget
+        const champs = new FormData(formulaire)
+
+        setEnvoiEnCours(true)
+        setSuccesContact('')
+        setErreurContact('')
+
+        try {
+            const resultat = await envoyerContact(slug, {
+                nom: champs.get('nom'),
+                email: champs.get('email'),
+                objet: champs.get('objet'),
+                message: champs.get('message'),
+            })
+
+            setSuccesContact(resultat.message)
+            formulaire.reset()
+        } catch (erreur) {
+            setErreurContact(
+                erreur.message || 'Impossible d’envoyer le message.'
+            )
+        } finally {
+            setEnvoiEnCours(false)
+        }
+    }
 
     if (chargement) {
         return (
@@ -94,7 +128,7 @@ function FicheArtisan() {
 
                     <form
                         className="formulaire-contact"
-                        onSubmit={(event) => event.preventDefault()}
+                        onSubmit={gererEnvoi}
                     >
                         <div className="mb-4">
                             <label htmlFor="contact-nom" className="form-label">
@@ -150,9 +184,24 @@ function FicheArtisan() {
                             />
                         </div>
 
-                        <button type="submit" className="btn btn-primary w-100">
-                            Envoyer
+                        <button
+                            type="submit"
+                            className="btn btn-primary w-100"
+                            disabled={envoiEnCours}
+                        >
+                            {envoiEnCours ? 'Envoi en cours…' : 'Envoyer'}
                         </button>
+                        {succesContact && (
+                            <p className="mt-3" role="status">
+                                {succesContact}
+                            </p>
+                        )}
+
+                        {erreurContact && (
+                            <p className="mt-3" role="alert">
+                                {erreurContact}
+                            </p>
+                        )}
                     </form>
                 </section>
             </div>

@@ -33,3 +33,24 @@ export async function recupererCategories() {
 
     return reponse.json()
 }
+
+export async function envoyerContact(slug, formulaire) {
+    const reponse = await fetch(
+        `${adresseApi}/artisans/${encodeURIComponent(slug)}/contact`,
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formulaire),
+        }
+    )
+
+    const resultat = await reponse.json()
+
+    if (!reponse.ok) {
+        throw new Error(resultat.message || 'Impossible d’envoyer le message.')
+    }
+
+    return resultat
+}
