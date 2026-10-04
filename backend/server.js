@@ -7,6 +7,7 @@ const { rateLimit } = require('express-rate-limit')
 const validator = require('validator')
 
 const app = express()
+app.set('trust proxy', 'loopback')
 const port = Number(process.env.PORT) || 3000
 
 app.use(
@@ -145,7 +146,7 @@ async function demarrer() {
     try {
         await sequelize.authenticate()
 
-        app.listen(port, () => {
+        app.listen(port, '127.0.0.1', () => {
             console.log(`Serveur démarré sur http://localhost:${port}`)
         })
     } catch (erreur) {
