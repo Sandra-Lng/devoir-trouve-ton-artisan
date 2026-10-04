@@ -132,3 +132,11 @@ Le site est actuellement accessible en HTTP. Les emails du formulaire sont redir
 - Envoi et réception d’un email depuis le site hébergé.
 - Liens du footer vers les pages en construction.
 - Affichage de la page 404 et du favicon.
+
+## Vérification du code et des dépendances
+
+Vérifications effectuées le 4 octobre 2026 :
+
+- `npm run lint` dans le frontend : 0 erreur et 0 avertissement.
+- `npm audit` dans le frontend : 0 vulnérabilité connue signalée.
+- `npm audit` dans le backend : 0 vulnérabilité connue signalée.
