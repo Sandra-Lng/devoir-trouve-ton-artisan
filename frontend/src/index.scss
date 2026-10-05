@@ -141,21 +141,21 @@ align-items: center;
 gap: 16px;
 }
 
-.carte-artisan h3 {
-  font-size: 18px;
-  font-weight: 700;
-}
-
 .carte-artisan p {
   margin-bottom: 4px;
 }
 
-.carte-artisan h3 a {
+.carte-artisan .h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.carte-artisan .h3 a {
   color: $texte;
   text-decoration: none;
 }
 
-.carte-artisan h3 a:hover {
+.carte-artisan .h3 a:hover {
   text-decoration: underline;
 }
 
