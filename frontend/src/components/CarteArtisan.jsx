@@ -3,15 +3,16 @@ import localisation from '../assets/icons/localisation.svg'
 import chevron from '../assets/icons/chevron.svg'
 import NoteArtisan from './NoteArtisan'
 
-function CarteArtisan({ nom, note, specialite, ville, icone, lien }) {
+function CarteArtisan({ nom, note, specialite, ville, icone, lien, niveauTitre = 'h3' }) {
+    const Titre = niveauTitre
     return (
         <article className="carte-artisan position-relative">
             <img src={icone} alt="" width="40" height="40" />
 
             <div>
-                <h3>
+                <Titre className="h3">
                     <Link to={lien} className="stretched-link">{nom}</Link>
-                </h3>
+                </Titre>
 
                 <NoteArtisan note={note} />
 

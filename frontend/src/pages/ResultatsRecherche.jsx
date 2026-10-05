@@ -64,6 +64,7 @@ function ResultatsRecherche() {
                         {resultats.map((artisan) => (
                             <div className="col-12 col-md-6" key={artisan.slug}>
                                 <CarteArtisan
+                                    niveauTitre="h2"
                                     nom={artisan.nom}
                                     note={artisan.note}
                                     specialite={artisan.specialite}
