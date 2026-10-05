@@ -6,7 +6,7 @@ Le site permet de trouver un artisan de la région Auvergne-Rhône-Alpes, de con
 
 ## Site en ligne
 
-http://51.77.144.158/
+https://51.77.144.158/
 
 ## Technologies utilisées
 
@@ -120,7 +120,7 @@ Le site est hébergé sur un VPS OVH sous Ubuntu.
 - MySQL stocke les catégories, les spécialités et les artisans.
 - Le backend écoute sur `127.0.0.1:3001` sur le VPS.
 
-Le site est actuellement accessible en HTTP. Les emails du formulaire sont redirigés vers une adresse de test.
+Le site est accessible en HTTPS avec un certificat Let’s Encrypt renouvelé automatiquement. Les emails du formulaire sont redirigés vers une adresse de test.
 
 ## Vérifications effectuées
 
