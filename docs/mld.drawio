@@ -1,0 +1,35 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="1wnuytOokyK1OrlU3SJj">
+    <mxGraphModel dx="1080" dy="887" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DQjGiHDckkTNGOP2q0BH-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="CATÉGORIE&lt;br&gt;────────────&lt;br&gt;&lt;u&gt;id&lt;/u&gt;&lt;br&gt;nom&lt;br&gt;slug" vertex="1">
+          <mxGeometry height="100" width="140" x="330" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DQjGiHDckkTNGOP2q0BH-18" edge="1" parent="1" source="DQjGiHDckkTNGOP2q0BH-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="DQjGiHDckkTNGOP2q0BH-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQjGiHDckkTNGOP2q0BH-20" connectable="0" parent="DQjGiHDckkTNGOP2q0BH-18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;code&gt;categorie_id → id&lt;/code&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.0911" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DQjGiHDckkTNGOP2q0BH-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="SPÉCIALITÉ&lt;br&gt;────────────&lt;br&gt;&lt;u&gt;id&lt;/u&gt;&lt;br&gt;&lt;div&gt;nom&lt;/div&gt;&lt;div&gt;categorie_id (FK)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="140" x="330" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="DQjGiHDckkTNGOP2q0BH-19" edge="1" parent="1" source="DQjGiHDckkTNGOP2q0BH-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="DQjGiHDckkTNGOP2q0BH-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DQjGiHDckkTNGOP2q0BH-21" connectable="0" parent="DQjGiHDckkTNGOP2q0BH-19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;code&gt;specialite_id → id&lt;/code&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.0356" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DQjGiHDckkTNGOP2q0BH-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="ARTISAN&lt;br&gt;────────────&lt;br&gt;&lt;u&gt;id&lt;/u&gt;&lt;br&gt;slug&lt;br&gt;nom&lt;br&gt;note&lt;br&gt;ville&lt;br&gt;apropos&lt;br&gt;email&lt;br&gt;site_web&lt;br&gt;&lt;div&gt;top&lt;/div&gt;&lt;div&gt;specialite_id (FK)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="180" x="310" y="600" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
