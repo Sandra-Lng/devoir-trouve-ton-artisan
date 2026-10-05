@@ -14,7 +14,9 @@ function PageConstruction() {
     const titre = titres[pathname] || 'Page en construction'
 
     return (
-        <main className="container contenu-principal">
+        <main id="contenu-principal"
+                tabIndex={-1}
+                className="container contenu-principal">
             <Seo
                 titre={`${titre} | Trouve ton artisan`}
                 description={`La page ${titre} du site Trouve ton artisan est en construction.`}

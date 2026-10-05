@@ -41,7 +41,9 @@ function Services() {
     )
 
     return (
-        <main className="container contenu-principal">
+        <main id="contenu-principal"
+                tabIndex={-1}
+                className="container contenu-principal">
             <Seo
                 titre="Artisans des services | Trouve ton artisan"
                 description="Trouvez un coiffeur, un fleuriste, un toiletteur ou un professionnel du webdesign en Auvergne-Rhône-Alpes."

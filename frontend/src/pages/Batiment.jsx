@@ -41,7 +41,9 @@ function Batiment() {
     )
 
     return (
-        <main className="container contenu-principal">
+        <main id="contenu-principal"
+                tabIndex={-1}
+                className="container contenu-principal">
             <Seo
                 titre="Artisans du bâtiment | Trouve ton artisan"
                 description="Trouvez un menuisier, un électricien, un chauffagiste ou un plombier en Auvergne-Rhône-Alpes et contactez-le."

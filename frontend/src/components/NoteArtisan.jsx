@@ -25,7 +25,12 @@ function NoteArtisan({ note }) {
         })}
       </span>
 
-      <span>{note}/5</span>
+      <span>
+        <span className="visually-hidden">Note : </span>
+        {note}
+        <span aria-hidden="true">/5</span>
+        <span className="visually-hidden"> sur 5</span>
+      </span>
     </div>
   )
 }

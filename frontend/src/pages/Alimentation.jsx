@@ -41,7 +41,9 @@ function Alimentation() {
     )
 
     return (
-        <main className="container contenu-principal">
+        <main id="contenu-principal"
+                tabIndex={-1}
+                className="container contenu-principal">
             <Seo
                 titre="Artisans de l’alimentation | Trouve ton artisan"
                 description="Découvrez les boulangers, bouchers, chocolatiers et traiteurs en Auvergne-Rhône-Alpes et contactez un artisan."

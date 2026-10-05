@@ -99,7 +99,9 @@ function FicheArtisan() {
     }
 
     return (
-        <main className="container contenu-principal">
+        <main id="contenu-principal"
+                tabIndex={-1}
+                className="container contenu-principal">
             <Seo
                 titre={`${artisan.nom} | Trouve ton artisan`}
                 description={`Découvrez ${artisan.nom}, ${artisan.specialite} à ${artisan.ville}, et contactez cet artisan via le formulaire.`}

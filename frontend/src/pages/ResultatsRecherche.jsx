@@ -45,7 +45,9 @@ function ResultatsRecherche() {
     )
 
     return (
-        <main className="container contenu-principal">
+        <main id="contenu-principal"
+                tabIndex={-1}
+                className="container contenu-principal">
             <Seo
                 titre="Résultats de recherche | Trouve ton artisan"
                 description="Recherchez un artisan par son nom en Auvergne-Rhône-Alpes et consultez sa fiche pour le contacter."

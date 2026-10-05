@@ -15,6 +15,9 @@ import PageConstruction from './pages/PageConstruction'
 function App() {
   return (
     <>
+      <a href="#contenu-principal" className="lien-evitement">
+        Aller au contenu
+      </a>
       <Header />
       <Recherche />
       <Routes>

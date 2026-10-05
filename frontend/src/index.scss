@@ -377,3 +377,20 @@ gap: 16px;
   height: auto;
   margin: 0 auto 32px;
 }
+
+.lien-evitement {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 12px 16px;
+  background-color: white;
+  color: $bleu-fonce;
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.lien-evitement:focus {
+  transform: translateY(0);
+  outline: 3px solid $bleu-fonce;
+}

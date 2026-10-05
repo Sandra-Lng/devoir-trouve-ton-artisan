@@ -47,7 +47,9 @@ function Accueil() {
                 titre="Trouvez votre artisan en Auvergne-Rhône-Alpes"
                 description="Découvrez les artisans d’Auvergne-Rhône-Alpes et contactez un professionnel du bâtiment, de l’alimentation, de la fabrication ou des services."
             />
-            <main className="container contenu-principal">
+            <main id="contenu-principal"
+                tabIndex={-1}
+                className="container contenu-principal">
                 <h1>Trouvez votre artisan</h1>
                 <p>Découvrez les artisans de la région Auvergne-Rhône-Alpes.</p>
                 <div className="row g-3 mt-3">

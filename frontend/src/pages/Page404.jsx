@@ -4,7 +4,9 @@ import Seo from '../components/Seo'
 
 function Page404() {
     return (
-        <main className="container contenu-principal text-center">
+        <main id="contenu-principal"
+                tabIndex={-1}
+                className="container contenu-principal">
             <Seo
                 titre="Page introuvable | Trouve ton artisan"
                 description="Cette page est introuvable. Retournez à l’accueil pour trouver un artisan en Auvergne-Rhône-Alpes."
